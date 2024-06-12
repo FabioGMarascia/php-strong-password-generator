@@ -47,17 +47,35 @@ if (isset($_GET["passwordLength"])) {
 
 
 
-                        // METHOD N.1 FOR PASSWORD
+                        // // METHOD N.1 FOR PASSWORD
 
-                        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&';
-                        $randomPassword = '';
+                        // $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&';
+                        // $randomPassword = '';
 
-                        for ($i = 0; $i < $passwordLength; $i++) {
-                            $index = rand(0, strlen($characters) - 1);
-                            $randomPassword .= $characters[$index];
+                        // for ($i = 0; $i < $passwordLength; $i++) {
+                        //     $index = rand(0, strlen($characters) - 1);
+                        //     $randomPassword .= $characters[$index];
+                        // }
+
+                        // echo $randomPassword;
+
+
+                        // METHOD N.2 FOR PASSWORD WITH FUNCTION
+
+                        function getPassword($length)
+                        {
+                            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&';
+                            $randomPassword = '';
+
+                            for ($i = 0; $i <  $length; $i++) {
+                                $index = rand(0, strlen($characters) - 1);
+                                $randomPassword .= $characters[$index];
+                            }
+
+                            return $randomPassword;
                         }
 
-                        echo $randomPassword;
+                        echo getPassword($passwordLength);
                     }
 
                     ?>

@@ -1,3 +1,11 @@
+<?php
+
+if (isset($_GET["passwordLength"])) {
+
+    $passwordLength = $_GET["passwordLength"];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +25,7 @@
 
             <h1 class="text-warning display-4 fw-bold text-center">FORM</h1>
 
-            <form action="generatePw.php" method="GET">
+            <form action="" method="GET">
                 <div class="row justify-content-center">
                     <div class="col-6">
                         <h2>Password Length ?</h2>
@@ -35,12 +43,71 @@
         </div>
     </div>
 
-    <!-- <div class="row mx-0 justify-content-center mt-5">
+    <div class="row justify-content-center mt-5">
         <div class="col-5 px-0 text-center">
-            <h1 class="text-warning display-3 fw-bold text-center">HOTELS</h1>
 
+            <h1 class="text-warning display-4 fw-bold text-center">GENERATED PASSWORD</h1>
+
+            <div class="row justify-content-center">
+                <div class="col-12">
+
+                    <?php
+
+                    if (isset($_GET["passwordLength"])) {
+                        // // METHOD N.1 FOR X
+
+                        // $passwordBox = "";
+                        // for ($i = 0; $i < $passwordLength; $i++) {
+                        //     $passwordBox .= "X";
+                        // }
+                        // echo $passwordBox;
+
+
+                        // // METHOD N.2 FOR X
+
+                        // echo str_repeat("X", $passwordLength);
+
+
+
+                        // // METHOD N.1 FOR PASSWORD
+
+                        // $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&';
+                        // $randomPassword = '';
+
+                        // for ($i = 0; $i < $passwordLength; $i++) {
+                        //     $index = rand(0, strlen($characters) - 1);
+                        //     $randomPassword .= $characters[$index];
+                        // }
+
+                        // echo $randomPassword;
+
+
+                        // METHOD N.2 FOR PASSWORD WITH FUNCTION
+
+                        function getPassword($length)
+                        {
+                            $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&';
+                            $randomPassword = '';
+
+                            for ($i = 0; $i <  $length; $i++) {
+                                $index = rand(0, strlen($characters) - 1);
+                                $randomPassword .= $characters[$index];
+                            }
+
+                            return $randomPassword;
+                        }
+
+                        echo getPassword($passwordLength);
+                    }
+
+                    ?>
+
+
+
+                </div>
+            </div>
         </div>
-    </div> -->
+    </div>
 
 </body>
 
