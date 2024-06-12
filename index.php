@@ -15,7 +15,7 @@
     <div class="row justify-content-center mt-5">
         <div class="col-5 px-0 text-center">
 
-            <h1 class="text-warning display-3 fw-bold text-center">FORM</h1>
+            <h1 class="text-warning display-4 fw-bold text-center">FORM</h1>
 
             <form action="generatePw.php" method="GET">
                 <div class="row justify-content-center">

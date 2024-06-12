@@ -24,22 +24,40 @@ if (isset($_GET["passwordLength"])) {
     <div class="row justify-content-center mt-5">
         <div class="col-5 px-0 text-center">
 
-            <h1 class="text-warning display-3 fw-bold text-center">GENERATED PASSWORD</h1>
+            <h1 class="text-warning display-4 fw-bold text-center">GENERATED PASSWORD</h1>
 
             <div class="row justify-content-center">
                 <div class="col-12">
 
                     <?php
-                    // METHOD N.1
-                    if (isset($_GET["passwordLength"])) {
-                        $passwordBox = "";
-                        for ($i = 0; $i < $passwordLength; $i++) {
-                            $passwordBox .= "X";
-                        }
-                        echo $passwordBox;
 
-                        // METHOD N.2
+                    if (isset($_GET["passwordLength"])) {
+                        // // METHOD N.1 FOR X
+
+                        // $passwordBox = "";
+                        // for ($i = 0; $i < $passwordLength; $i++) {
+                        //     $passwordBox .= "X";
+                        // }
+                        // echo $passwordBox;
+
+
+                        // // METHOD N.2 FOR X
+
                         // echo str_repeat("X", $passwordLength);
+
+
+
+                        // METHOD N.1 FOR PASSWORD
+
+                        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%&';
+                        $randomPassword = '';
+
+                        for ($i = 0; $i < $passwordLength; $i++) {
+                            $index = rand(0, strlen($characters) - 1);
+                            $randomPassword .= $characters[$index];
+                        }
+
+                        echo $randomPassword;
                     }
 
                     ?>
