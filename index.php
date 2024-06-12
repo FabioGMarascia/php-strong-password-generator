@@ -58,6 +58,13 @@ if (isset($_GET["passwordLength"])) {
 
                     </div>
 
+                    <div class="col-2 px-0">
+                        <h4>Repetition Off</h4>
+
+                        <input type="checkbox" name="repetition">
+
+                    </div>
+
                 </div>
 
                 <button type="submit" class="btn bg-warning fw-bold mt-4">SUBMIT</button>
