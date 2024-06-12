@@ -21,16 +21,40 @@ if (isset($_GET["passwordLength"])) {
 
 <body>
     <div class="row justify-content-center mt-5">
-        <div class="col-5 px-0 text-center">
+        <div class="col-6 px-0 text-center">
 
-            <h1 class="text-warning display-4 fw-bold text-center">FORM</h1>
+            <h1 class="text-warning display-5 fw-bold text-center">FORM</h1>
 
             <form action="" method="GET">
                 <div class="row justify-content-center">
-                    <div class="col-6">
-                        <h2>Password Length ?</h2>
+                    <div class="col-5">
+                        <h4>Password Length</h4>
 
                         <input name="passwordLength" class="input-group h-50">
+
+                    </div>
+                </div>
+
+                <div class="row justify-content-center mt-3">
+
+                    <div class="col-2 px-0">
+                        <h4>Characters</h4>
+
+                        <input type="checkbox" name="characters">
+
+                    </div>
+
+                    <div class="col-2 px-0">
+                        <h4>Numbers</h4>
+
+                        <input type="checkbox" name="numbers">
+
+                    </div>
+
+                    <div class="col-2 px-0">
+                        <h4>Symbols</h4>
+
+                        <input type="checkbox" name="symbols">
 
                     </div>
 
@@ -46,7 +70,7 @@ if (isset($_GET["passwordLength"])) {
     <div class="row justify-content-center mt-5">
         <div class="col-5 px-0 text-center">
 
-            <h1 class="text-warning display-4 fw-bold text-center">GENERATED PASSWORD</h1>
+            <h1 class="text-warning display-5 fw-bold text-center">GENERATED PASSWORD</h1>
 
             <div class="row justify-content-center">
                 <div class="col-12">
@@ -54,6 +78,7 @@ if (isset($_GET["passwordLength"])) {
                     <?php
 
                     if (isset($_GET["passwordLength"])) {
+
                         // // METHOD N.1 FOR X
 
                         // $passwordBox = "";
